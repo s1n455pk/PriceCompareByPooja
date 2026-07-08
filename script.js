@@ -26,7 +26,7 @@ searchBtn.addEventListener("click", function () {
     const value = searchInput.value.toLowerCase().trim();
 
     if (value === "") {
-        alert("Please enter a product name.");
+        showToast("⚠ Please enter a product name.","error");
         return;
     }
 
@@ -43,7 +43,7 @@ searchBtn.addEventListener("click", function () {
     }
 
     else {
-        alert("❌ Product Not Found");
+        showToast("❌ Product Not Found","error");
     }
 
 });
@@ -85,14 +85,14 @@ const relianceBtn = document.getElementById("relianceBtn");
 // ==========================
 
 iphoneBtn.addEventListener("click", function () {
-
+showToast("✅ Apple iPhone 15 Loaded","success");
     document.getElementById("comparison").scrollIntoView({
         behavior: "smooth"
     });
 
     productTitle.innerText = "Apple iPhone 15 (128GB)";
     productDesc.innerText = "Latest Apple smartphone with A16 Bionic Chip.";
-    productImage.src = "assets/images/iphone15.jpg";
+    productImage.src = "assets/images/iphone15.png";
 
     amazonPrice.innerText = "₹69,999";
     flipkartPrice.innerText = "₹70,499";
@@ -122,14 +122,14 @@ iphoneBtn.addEventListener("click", function () {
 // ==========================
 
 s24Btn.addEventListener("click", function () {
-
+showToast("✅ Samsung S24 Loaded","success");
     document.getElementById("comparison").scrollIntoView({
         behavior: "smooth"
     });
 
     productTitle.innerText = "Samsung Galaxy S24";
     productDesc.innerText = "Samsung flagship smartphone with Galaxy AI.";
-    productImage.src = "assets/images/s24.jpg";
+    productImage.src = "assets/images/s24.png";
 
     amazonPrice.innerText = "₹62,999";
     flipkartPrice.innerText = "₹61,999";
@@ -159,14 +159,14 @@ s24Btn.addEventListener("click", function () {
 // ==========================
 
 macbookBtn.addEventListener("click", function () {
-
+showToast("✅ MacBook Air M3 Loaded","success");
     document.getElementById("comparison").scrollIntoView({
         behavior: "smooth"
     });
 
     productTitle.innerText = "MacBook Air M3";
     productDesc.innerText = "Apple MacBook Air with powerful M3 Chip.";
-    productImage.src = "assets/images/macbook.jpg";
+    productImage.src = "assets/images/macbook.png";
 
     amazonPrice.innerText = "₹1,09,900";
     flipkartPrice.innerText = "₹1,10,499";
@@ -251,15 +251,40 @@ themeBtn.addEventListener("click", function () {
 
 });
 
+// ==========================
+// Active Navbar on Scroll
+// ==========================
+
+const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".nav-link");
 
-navLinks.forEach(link => {
+window.addEventListener("scroll", function () {
 
-    link.addEventListener("click", function () {
+    let current = "";
 
-        navLinks.forEach(item => item.classList.remove("active"));
+    sections.forEach(section => {
 
-        this.classList.add("active");
+        const sectionTop = section.offsetTop - 120;
+        const sectionHeight = section.offsetHeight;
+
+        if (window.scrollY >= sectionTop &&
+            window.scrollY < sectionTop + sectionHeight) {
+
+            current = section.getAttribute("id");
+
+        }
+
+    });
+
+    navLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === "#" + current) {
+
+            link.classList.add("active");
+
+        }
 
     });
 
@@ -272,5 +297,140 @@ window.addEventListener("load", function () {
         document.getElementById("loader").style.display = "none";
 
     },1000);
+
+});
+
+// ==========================
+// Scroll Progress Bar
+// ==========================
+
+window.addEventListener("scroll", function () {
+
+    const winScroll =
+        document.documentElement.scrollTop ||
+        document.body.scrollTop;
+
+    const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+    const scrolled = (winScroll / height) * 100;
+
+    document.getElementById("progressBar").style.width =
+        scrolled + "%";
+
+});
+
+// ==========================
+// Animated Counters
+// ==========================
+
+function animateCounter(id, target, suffix){
+
+    let count = 0;
+
+    const counter = document.getElementById(id);
+
+    const interval = setInterval(function(){
+
+        count++;
+
+        counter.innerText = count + suffix;
+
+        if(count >= target){
+
+            clearInterval(interval);
+
+            counter.innerText = target + suffix;
+
+        }
+
+    },50);
+
+}
+
+window.addEventListener("load", function(){
+
+    animateCounter("productsCount",10,"K+");
+    animateCounter("storesCount",25,"+");
+    animateCounter("usersCount",50,"K+");
+
+});
+
+console.log("Counter Loaded");
+
+// ==========================
+// Toast Notification
+// ==========================
+
+function showToast(message,type){
+
+    const toast = document.getElementById("toast");
+
+    toast.innerText = message;
+
+    toast.className = "";
+
+    toast.classList.add("show");
+
+    toast.classList.add(type);
+
+    setTimeout(function(){
+
+        toast.classList.remove("show");
+
+    },3000);
+
+}
+
+// ==========================
+// Search Suggestions
+// ==========================
+
+const suggestions = document.getElementById("suggestions");
+
+searchInput.addEventListener("input", function () {
+
+    const value = this.value.toLowerCase();
+
+    suggestions.innerHTML = "";
+
+    if (value === "") {
+        suggestions.style.display = "none";
+        return;
+    }
+
+    const filtered = products.filter(product =>
+    product.name.toLowerCase().includes(value)
+);
+
+    filtered.forEach(product => {
+
+        const item = document.createElement("div");
+
+        item.className = "suggestion-item";
+
+        item.innerText = product.name;
+
+        item.onclick = function () {
+            searchInput.value = product.name;
+            suggestions.style.display = "none";
+
+            searchBtn.click();
+        };
+
+        suggestions.appendChild(item);
+
+    });
+
+    suggestions.style.display = filtered.length ? "block" : "none";
+
+});
+
+document.addEventListener("click", function (e) {
+
+    if (!e.target.closest(".hero-search")) {
+        suggestions.style.display = "none";
+    }
 
 });

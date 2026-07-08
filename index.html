@@ -30,8 +30,8 @@ href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.m
 </head>
 
 <body>
-
-     <div id="loader">
+    <div id="progressBar"></div>
+    <div id="loader">
     <div class="spinner"></div>
 </div>
 
@@ -68,7 +68,7 @@ id="menu">
 <li class="nav-item">
 
 <a class="nav-link active"
-href="#">
+href="#home">
 
 Home
 
@@ -140,7 +140,7 @@ Contact
 HERO
 ===========================-->
 
-<section class="hero">
+<section id="home" class="hero">
 
 <div class="container">
 
@@ -178,6 +178,7 @@ Find the lowest price in seconds.
 type="text"
 id="searchInput"
 placeholder="Search products...">
+<div id="suggestions" class="suggestions-box"></div>
 
 <button id="searchBtn">
 
@@ -191,11 +192,7 @@ Search
 
 <div>
 
-<h2>
-
-10K+
-
-</h2>
+<h2 id="productsCount">10K+</h2>
 
 <p>
 
@@ -207,11 +204,7 @@ Products
 
 <div>
 
-<h2>
-
-25+
-
-</h2>
+<h2 id="storesCount">25+</h2>
 
 <p>
 
@@ -223,11 +216,7 @@ Stores
 
 <div>
 
-<h2>
-
-50K+
-
-</h2>
+<h2 id="usersCount">50K+</h2>
 
 <p>
 
@@ -406,7 +395,7 @@ Fashion
 
 <img
 id="productImage"
-src="assets/images/iphone15.jpg"
+src="assets/images/iphone15.png"
 class="img-fluid product-img">
 
 </div>
@@ -687,7 +676,7 @@ Compare within seconds.
 
 <div class="product-card">
 
-<img src="assets/images/iphone15.jpg" alt="Apple iPhone 15">
+<img src="assets/images/iphone15.png" alt="Apple iPhone 15">
 
 <h4>Apple iPhone 15</h4>
 
@@ -709,7 +698,7 @@ Compare Now
 
 <div class="product-card">
 
-<img src="assets/images/s24.jpg" alt="Samsung Galaxy S24">
+<img src="assets/images/s24.png" alt="Samsung Galaxy S24">
 
 <h4>Samsung S24</h4>
 
@@ -731,7 +720,7 @@ Compare Now
 
 <div class="product-card">
 
-<img src="assets/images/macbook.jpg" alt="MacBook Air M3">
+<img src="assets/images/macbook.png" alt="MacBook Air M3">
 
 <h4>MacBook Air M3</h4>
 
@@ -827,13 +816,7 @@ support@pricecompare.com
 
 </div>
 
-<hr>
 
-<p class="text-center">
-
-© 2026 PriceCompare | Designed by Pooja
-
-</p>
 
 </div>
 
@@ -849,6 +832,10 @@ support@pricecompare.com
 
 <script src="products.js"></script>
 <script src="script.js"></script>
+
+<!-- Toast Notification -->
+
+<div id="toast"></div>
 
 </body>
 </html>

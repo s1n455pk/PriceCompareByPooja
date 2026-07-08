@@ -2,7 +2,7 @@ const products = [
 
 {
 name:"iPhone 15",
-image:"https://m.media-amazon.com/images/I/61bK6PMOC3L._SL1500_.jpg",
+image:"assets/images/iphone15.png",
 
 stores:[
 {
@@ -41,7 +41,7 @@ delivery:"2 Days"
 
 name:"Samsung S24",
 
-image:"https://images.samsung.com/is/image/samsung/p6pim/in/sm-s921blbcins/gallery/in-galaxy-s24-s921-sm-s921blbcins-thumb-539573282",
+image:"assets/images/s24.png",
 
 stores:[
 
@@ -66,6 +66,49 @@ store:"Croma",
 price:63500,
 rating:4.6,
 discount:"10%",
+delivery:"2 Days"
+}
+
+]
+
+},
+
+{
+name:"MacBook Air M3",
+
+image:"assets/images/macbook.png",
+
+stores:[
+
+{
+store:"Amazon",
+price:109900,
+rating:4.9,
+discount:"8%",
+delivery:"Tomorrow"
+},
+
+{
+store:"Flipkart",
+price:110999,
+rating:4.8,
+discount:"7%",
+delivery:"2 Days"
+},
+
+{
+store:"Croma",
+price:111500,
+rating:4.7,
+discount:"6%",
+delivery:"Tomorrow"
+},
+
+{
+store:"Reliance Digital",
+price:112000,
+rating:4.7,
+discount:"5%",
 delivery:"2 Days"
 }
 
