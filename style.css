@@ -29,34 +29,45 @@ body{
 ==========================*/
 
 .custom-navbar{
-    background:rgba(255,255,255,.85);
+    background: linear-gradient(
+    90deg,
+    #0F172A,
+    #1E3A8A,
+    #2563EB
+);
+
     backdrop-filter:blur(20px);
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
-    border-bottom:1px solid rgba(255,255,255,.15);
+    -webkit-backdrop-filter:blur(20px);
+
+    box-shadow:0 8px 30px rgba(13,110,253,.20);
+
+    border-bottom:1px solid rgba(255,255,255,.25);
+
     padding:15px 0;
-    transition:.3s;
+
+    transition:.35s;
 }
 
 .logo{
     font-size:30px;
     font-weight:700;
-    color:#222;
+    color:white;
     text-decoration:none;
 }
 
 .logo span{
-    color:#0d6efd;
+    color:#FFD54F;
 }
 
 .nav-link{
-    color:#444;
+    color:white;
     margin-left:18px;
     font-weight:500;
     transition:.3s;
 }
 
 .nav-link:hover{
-    color:#0d6efd;
+    color:#FFD54F;
 }
 
 .search-icon{
@@ -74,9 +85,46 @@ body{
 ==========================*/
 
 .hero{
+    position: relative;
+    overflow: hidden;
     padding:170px 0 120px;
     background:linear-gradient(135deg,#0d6efd,#3b82f6,#7c3aed);
     color:#fff;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:420px;
+    height:420px;
+    border-radius:50%;
+    background:rgba(255,255,255,.08);
+    top:-120px;
+    right:-120px;
+    filter:blur(20px);
+    animation:float1 7s ease-in-out infinite alternate;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:260px;
+    height:260px;
+    border-radius:50%;
+    background:rgba(255,255,255,.06);
+    left:-80px;
+    bottom:-80px;
+    animation:float2 6s ease-in-out infinite alternate;
+}
+
+@keyframes float1{
+    from{transform:translateY(0);}
+    to{transform:translateY(35px);}
+}
+
+@keyframes float2{
+    from{transform:translateX(0);}
+    to{transform:translateX(40px);}
 }
 
 .tag{
@@ -354,18 +402,34 @@ TRENDING PRODUCTS
 }
 
 .dark-mode .custom-navbar{
-    background:#1e1e1e;
+    background: linear-gradient(
+        90deg,
+        #020617,
+        #0F172A,
+        #1E293B
+    ) !important;
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    box-shadow:0 8px 30px rgba(0,0,0,.35);
 }
 
 .dark-mode .product-card,
 .dark-mode .category-card,
-.dark-mode .comparison-card{
+.comparison-card{
     background:#222;
-    color:white;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
 }
 
-.dark-mode .table{
-    color:white;
+.table{
+    margin-bottom:0;
+    border-radius:20px;
+    overflow:hidden;
 }
 
 .dark-mode .section-title p,
@@ -374,11 +438,8 @@ TRENDING PRODUCTS
 }
 
 .nav-link.active{
-
-    color:#0d6efd !important;
-
+    color:#FFD54F !important;
     font-weight:700;
-
 }
 
 .btn{
@@ -983,4 +1044,42 @@ TOAST
     background:#fff;
     color:#0d6efd;
     box-shadow:0 15px 35px rgba(13,110,253,.35);
+}
+
+/* ==========================
+   Hero Text Animation
+========================== */
+
+.hero-title{
+    font-size:68px;
+    font-weight:800;
+    line-height:1.1;
+}
+
+#changingText{
+    color:#FFD54A;
+    font-weight:800;
+    display:inline-block;
+    text-shadow:
+        0 0 10px rgba(255,213,74,.5),
+        0 0 20px rgba(255,213,74,.35);
+}
+
+
+/* ===== Force Dark Navbar ===== */
+
+body.dark-mode .custom-navbar{
+    background: linear-gradient(
+        90deg,
+        #0B1220,
+        #102347,
+        #163A6B
+    ) !important;
+
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+
+    border-bottom: 1px solid rgba(255,255,255,.08) !important;
+
+    box-shadow: 0 8px 30px rgba(0,0,0,.35) !important;
 }

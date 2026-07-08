@@ -434,3 +434,70 @@ document.addEventListener("click", function (e) {
     }
 
 });
+
+const words = [
+    "Amazon",
+    "Flipkart",
+    "Croma",
+    "Reliance Digital"
+];
+
+const changingText = document.getElementById("changingText");
+
+let wordIndex = 0;
+let letterIndex = 0;
+let deleting = false;
+
+function typeEffect(){
+
+    const currentWord = words[wordIndex];
+
+    if(!deleting){
+
+        changingText.textContent =
+        currentWord.substring(0, letterIndex);
+
+        letterIndex++;
+
+        if(letterIndex > currentWord.length){
+
+            deleting = true;
+
+            setTimeout(typeEffect,1200);
+
+            return;
+
+        }
+
+    }
+
+    else{
+
+        changingText.textContent =
+        currentWord.substring(0, letterIndex);
+
+        letterIndex--;
+
+        if(letterIndex < 0){
+
+            deleting = false;
+
+            wordIndex++;
+
+            if(wordIndex >= words.length){
+
+                wordIndex = 0;
+
+            }
+
+            letterIndex = 0;
+
+        }
+
+    }
+
+    setTimeout(typeEffect, deleting ? 90 : 180);
+
+}
+
+typeEffect();
