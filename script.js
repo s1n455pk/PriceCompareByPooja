@@ -501,3 +501,35 @@ function typeEffect(){
 }
 
 typeEffect();
+
+// ================= Hero Image Slider =================
+
+const heroImages = [
+    "assets/images/iphone15.png",
+    "assets/images/s24.png",
+    "assets/images/macbook.png"
+];
+
+const heroImage = document.getElementById("heroImage");
+
+let heroIndex = 0;
+
+setInterval(() => {
+
+    heroImage.classList.add("change");
+
+    setTimeout(() => {
+
+        heroIndex++;
+
+        if (heroIndex >= heroImages.length) {
+            heroIndex = 0;
+        }
+
+        heroImage.src = heroImages[heroIndex];
+
+        heroImage.classList.remove("change");
+
+    }, 400);
+
+}, 3000);

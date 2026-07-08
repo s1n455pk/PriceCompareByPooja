@@ -185,6 +185,7 @@ body{
 .hero-image img{
     width:420px;
     animation:float 4s ease-in-out infinite;
+    transition: opacity .5s ease, transform .5s ease;
 }
 
 .hero-stats{
@@ -1082,4 +1083,9 @@ body.dark-mode .custom-navbar{
     border-bottom: 1px solid rgba(255,255,255,.08) !important;
 
     box-shadow: 0 8px 30px rgba(0,0,0,.35) !important;
+}
+
+.hero-image img.change{
+    opacity:0;
+    transform:translateY(15px);
 }
