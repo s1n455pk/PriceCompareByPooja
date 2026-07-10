@@ -533,3 +533,36 @@ setInterval(() => {
     }, 400);
 
 }, 3000);
+
+// ==========================
+// Navbar Search Button
+// ==========================
+
+const navSearchBtn = document.getElementById("navSearchBtn");
+
+navSearchBtn.addEventListener("click", () => {
+
+    // Smooth Scroll
+    document.getElementById("home").scrollIntoView({
+        behavior: "smooth"
+    });
+
+    setTimeout(() => {
+
+        // Auto Focus
+        document.getElementById("searchInput").focus();
+
+        // Glow Effect
+        document.querySelector(".hero-search").classList.add("active");
+
+        // Remove Glow
+        setTimeout(() => {
+            document.querySelector(".hero-search").classList.remove("active");
+        },2000);
+
+        // Toast
+        showToast("🔍 Start searching products...", "success");
+
+    },600);
+
+});

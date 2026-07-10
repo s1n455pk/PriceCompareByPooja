@@ -23,12 +23,13 @@
 <link rel="stylesheet"
 href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-<!-- CSS -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
+<!-- CSS -->
 <link rel="stylesheet" href="style.css">
 
 </head>
-
 <body>
     <div id="progressBar"></div>
     <div id="loader">
@@ -122,8 +123,8 @@ Contact
 
 </ul>
 
-<button class="btn search-icon">
-<i class="bi bi-search"></i>
+<button id="navSearchBtn" class="btn search-icon">
+    <i class="bi bi-search"></i>
 </button>
 
 <button id="themeBtn" class="btn search-icon ms-2">
@@ -384,6 +385,10 @@ Fashion
 
 <div class="section-title text-center mb-5">
 <h2>Price Comparison</h2>
+<div class="update-badge">
+    <i class="bi bi-clock-history"></i>
+    Updated Today
+</div>
 <p>Compare prices from India's top online stores.</p>
 </div>
 
@@ -391,20 +396,24 @@ Fashion
 
 <div class="row align-items-center">
 
-<div class="col-lg-3 text-center">
+    <div class="col-lg-3 d-flex justify-content-center align-items-center comparison-image">
 
-<img
-id="productImage"
-src="assets/images/iphone15.png"
-class="img-fluid product-img">
+        <img
+            id="productImage"
+            src="assets/images/iphone15.png"
+            class="img-fluid product-img">
 
-</div>
+    </div>
 
-<div class="col-lg-9">
+    <div class="col-lg-9">
+
+<div class="title-row">
 
 <h3 id="productTitle">
 Apple iPhone 15 (128GB)
 </h3>
+
+</div>
 
 <p class="text-muted" id="productDesc">
 Latest Apple smartphone with A16 Bionic Chip.
@@ -438,7 +447,10 @@ Latest Apple smartphone with A16 Bionic Chip.
 
 <tr class="best-deal">
 
-<td><i class="bi bi-bag-fill"></i> Amazon</td>
+<td>
+    <i class="bi bi-amazon store-icon amazon"></i>
+    Amazon
+</td>
 
 <td id="amazonPrice">₹69,999</td>
 
@@ -458,7 +470,10 @@ Latest Apple smartphone with A16 Bionic Chip.
 
 <tr>
 
-<td><i class="bi bi-cart-fill"></i> Flipkart</td>
+<td>
+    <i class="bi bi-cart-fill store-icon flipkart"></i>
+    Flipkart
+</td>
 
 <td id="flipkartPrice">₹70,499</td>
 
@@ -479,7 +494,10 @@ Latest Apple smartphone with A16 Bionic Chip.
 
 <tr>
 
-<td>Croma</td>
+<td>
+    <i class="bi bi-phone-fill store-icon croma"></i>
+    Croma
+</td>
 
 <td id="cromaPrice">₹71,200</td>
 
@@ -500,7 +518,10 @@ Latest Apple smartphone with A16 Bionic Chip.
 
 <tr>
 
-<td>Reliance Digital</td>
+<td>
+    <i class="bi bi-shop store-icon reliance"></i>
+    Reliance Digital
+</td>
 
 <td id="reliancePrice">₹71,499</td>
 
@@ -560,8 +581,7 @@ We help users save money with smart comparison.
 
 <div class="row g-4">
 
-<div class="col-lg-3">
-
+<div class="col-lg-3 col-md-6 mb-4">
 <div class="feature-box">
 
 <i class="bi bi-search"></i>
@@ -582,7 +602,7 @@ Search products instantly.
 
 </div>
 
-<div class="col-lg-3">
+<div class="col-lg-3 col-md-6 mb-4">
 
 <div class="feature-box">
 
@@ -604,7 +624,7 @@ Find lowest available price.
 
 </div>
 
-<div class="col-lg-3">
+<div class="col-lg-3 col-md-6 mb-4">
 
 <div class="feature-box">
 
@@ -626,7 +646,7 @@ Only verified shopping websites.
 
 </div>
 
-<div class="col-lg-3">
+<div class="col-lg-3 col-md-6 mb-4">
 
 <div class="feature-box">
 
@@ -770,7 +790,7 @@ Compare prices from multiple online stores and save your money.
 
 </div>
 
-<div class="col-lg-3">
+<div class="col-lg-3 col-md-6 mb-4">
 
 <h5>
 
@@ -792,7 +812,7 @@ Quick Links
 
 </div>
 
-<div class="col-lg-3">
+<div class="col-lg-3 col-md-6 mb-4">
 
 <h5>
 
@@ -815,8 +835,31 @@ support@pricecompare.com
 </div>
 
 </div>
+</div>
 
+<hr class="footer-divider">
+<hr class="footer-divider">
 
+</div>
+<div class="footer-bottom">
+
+    <p>© 2026 PriceCompare • Made with ❤️ by <strong>Pooja</strong></p>
+
+    <div class="footer-icons">
+
+<a href="https://github.com/s1n455pk" target="_blank">
+<i class="fa-brands fa-github"></i>
+</a>
+
+<a href="#" target="_blank">
+<i class="fa-brands fa-linkedin"></i>
+</a>
+
+<a href="#" target="_blank">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+</div>
 
 </div>
 
