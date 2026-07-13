@@ -3,883 +3,864 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>PriceCompare | Smart Product Comparison</title>
+    <title>PriceCompare | Smart Product Comparison</title>
 
-<!-- Google Font -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-<!-- Bootstrap -->
+    <!-- Bootstrap -->
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Bootstrap Icons -->
+    <!-- Bootstrap Icons -->
 
-<link rel="stylesheet"
-href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-<!-- CSS -->
-<link rel="stylesheet" href="style.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 
 </head>
+
 <body>
     <div id="progressBar"></div>
     <div id="loader">
-    <div class="spinner"></div>
-</div>
+        <div class="spinner"></div>
+    </div>
 
-<!--==========================
+    <!--==========================
 NAVBAR
 ===========================-->
 
-<nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+    <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
 
-<div class="container">
+        <div class="container">
 
-<a class="navbar-brand logo" href="#">
+            <a class="navbar-brand logo" href="#">
 
-<i class="bi bi-shop"></i>
+                <i class="bi bi-shop"></i>
 
-Price<span>Compare</span>
+                Price<span>Compare</span>
 
-</a>
+            </a>
 
-<button class="navbar-toggler"
-type="button"
-data-bs-toggle="collapse"
-data-bs-target="#menu">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
 
-<span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
 
-</button>
+            </button>
 
-<div class="collapse navbar-collapse"
-id="menu">
+            <div class="collapse navbar-collapse" id="menu">
 
-<ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto">
 
-<li class="nav-item">
+                    <li class="nav-item">
 
-<a class="nav-link active"
-href="#home">
+                        <a class="nav-link active" href="#home">
 
-Home
+                            Home
 
-</a>
+                        </a>
 
-</li>
+                    </li>
 
-<li class="nav-item">
+                    <li class="nav-item">
 
-<a class="nav-link"
-href="#categories">
+                        <a class="nav-link" href="#categories">
 
-Categories
+                            Categories
 
-</a>
+                        </a>
 
-</li>
+                    </li>
 
-<li class="nav-item">
+                    <li class="nav-item">
 
-<a class="nav-link"
-href="#features">
+                        <a class="nav-link" href="#features">
 
-Features
+                            Features
 
-</a>
+                        </a>
 
-</li>
+                    </li>
 
-<li class="nav-item">
+                    <li class="nav-item">
 
-<a class="nav-link"
-href="#comparison">
+                        <a class="nav-link" href="#comparison">
 
-Compare
+                            Compare
 
-</a>
+                        </a>
 
-</li>
+                    </li>
 
-<li class="nav-item">
+                    <li class="nav-item">
 
-<a class="nav-link"
-href="#contact">
+                        <a class="nav-link" href="#contact">
 
-Contact
+                            Contact
 
-</a>
+                        </a>
 
-</li>
+                    </li>
 
-</ul>
+                </ul>
 
-<button id="navSearchBtn" class="btn search-icon">
-    <i class="bi bi-search"></i>
-</button>
+                <button id="navSearchBtn" class="btn search-icon">
+                    <i class="bi bi-search"></i>
+                </button>
 
-<button id="themeBtn" class="btn search-icon ms-2">
-    <i class="bi bi-moon-fill"></i>
-</button>
+                <button id="themeBtn" class="btn search-icon ms-2">
+                    <i class="bi bi-moon-fill"></i>
+                </button>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-</nav>
+    </nav>
 
-<!--==========================
-HERO
-===========================-->
+    <!--==========================HERO===========================-->
 
-<section id="home" class="hero">
+    <section id="home" class="hero">
 
-<div class="container">
+        <div class="container">
 
-<div class="row align-items-center">
+            <div class="row align-items-center">
 
-<div class="col-lg-6">
+                <div class="col-lg-6">
 
-<span class="tag">
+                    <span class="tag">
 
-🔥 India's Smart Price Comparison Platform
+                        🔥 India's Smart Price Comparison Platform
 
-</span>
+                    </span>
 
-<h1 class="hero-title">
-    Compare Prices
-    <br>
-    Across
-    <span id="changingText">Amazon</span>
-</h1>
+                    <h1 class="hero-title">
+                        Compare Prices
+                        <br>
+                        Across
+                        <span id="changingText">Amazon</span>
+                    </h1>
 
-<p>
+                    <p>
 
-Search any product and instantly compare prices from Amazon, Flipkart, Croma, Reliance Digital and many more online stores.
+                        Search any product and instantly compare prices from Amazon, Flipkart, Croma, Reliance Digital
+                        and many more online stores.
 
-Find the lowest price in seconds.
+                        Find the lowest price in seconds.
 
-</p>
+                    </p>
 
-<div class="hero-search">
+                    <div class="hero-search">
 
-<input
-type="text"
-id="searchInput"
-placeholder="Search products...">
-<div id="suggestions" class="suggestions-box"></div>
+                        <input type="text" id="searchInput" placeholder="Search products...">
+                        <div id="suggestions" class="suggestions-box"></div>
 
-<button id="searchBtn">
+                        <button id="searchBtn">
 
-Search
+                            Search
 
-</button>
+                        </button>
 
-</div>
+                    </div>
 
-<div class="hero-stats">
+                    <div class="hero-stats">
 
-<div>
+                        <div>
 
-<h2 id="productsCount">10K+</h2>
+                            <h2 id="productsCount">10K+</h2>
 
-<p>
+                            <p>
 
-Products
+                                Products
 
-</p>
+                            </p>
 
-</div>
+                        </div>
 
-<div>
+                        <div>
 
-<h2 id="storesCount">25+</h2>
+                            <h2 id="storesCount">25+</h2>
 
-<p>
+                            <p>
 
-Stores
+                                Stores
 
-</p>
+                            </p>
 
-</div>
+                        </div>
 
-<div>
+                        <div>
 
-<h2 id="usersCount">50K+</h2>
+                            <h2 id="usersCount">50K+</h2>
 
-<p>
+                            <p>
 
-Users
+                                Users
 
-</p>
+                            </p>
 
-</div>
+                        </div>
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
-<div class="col-lg-6">
+                <div class="col-lg-6">
 
-<div class="hero-image">
+                    <div class="hero-image">
 
-<img
-    id="heroImage"
-    src="assets/images/iphone15.png"
-    alt="Hero Image">
+                        <img id="heroImage" src="assets/images/iphone15.png" alt="Hero Image">
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-</section>
+    </section>
 
-<!--==========================
+    <!--==========================
 POPULAR CATEGORIES
 ===========================-->
 
-<section id="categories" class="categories">
+    <section id="categories" class="categories">
 
-<div class="container">
+        <div class="container">
 
-<div class="section-title">
+            <div class="section-title">
 
-<h2>
+                <h2>
 
-Popular Categories
+                    Popular Categories
 
-</h2>
+                </h2>
 
-<p>
+                <p>
 
-Choose your favourite category
+                    Choose your favourite category
 
-</p>
+                </p>
 
-</div>
+            </div>
 
-<div class="row g-4">
+            <div class="row g-4">
 
-<div class="col-lg-2 col-md-4 col-6">
+                <div class="col-lg-2 col-md-4 col-6">
 
-<div class="category-card">
+                    <div class="category-card">
 
-<i class="bi bi-phone"></i>
+                        <i class="bi bi-phone"></i>
 
-<h5>
+                        <h5>
 
-Mobiles
+                            Mobiles
 
-</h5>
+                        </h5>
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
-<div class="col-lg-2 col-md-4 col-6">
+                <div class="col-lg-2 col-md-4 col-6">
 
-<div class="category-card">
+                    <div class="category-card">
 
-<i class="bi bi-laptop"></i>
+                        <i class="bi bi-laptop"></i>
 
-<h5>
+                        <h5>
 
-Laptops
+                            Laptops
 
-</h5>
+                        </h5>
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
-<div class="col-lg-2 col-md-4 col-6">
+                <div class="col-lg-2 col-md-4 col-6">
 
-<div class="category-card">
+                    <div class="category-card">
 
-<i class="bi bi-headphones"></i>
+                        <i class="bi bi-headphones"></i>
 
-<h5>
+                        <h5>
 
-Electronics
+                            Electronics
 
-</h5>
+                        </h5>
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
-<div class="col-lg-2 col-md-4 col-6">
+                <div class="col-lg-2 col-md-4 col-6">
 
-<div class="category-card">
+                    <div class="category-card">
 
-<i class="bi bi-controller"></i>
+                        <i class="bi bi-controller"></i>
 
-<h5>
+                        <h5>
 
-Gaming
+                            Gaming
 
-</h5>
+                        </h5>
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
-<div class="col-lg-2 col-md-4 col-6">
+                <div class="col-lg-2 col-md-4 col-6">
 
-<div class="category-card">
+                    <div class="category-card">
 
-<i class="bi bi-house"></i>
+                        <i class="bi bi-house"></i>
 
-<h5>
+                        <h5>
 
-Home
+                            Home
 
-</h5>
+                        </h5>
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
-<div class="col-lg-2 col-md-4 col-6">
+                <div class="col-lg-2 col-md-4 col-6">
 
-<div class="category-card">
+                    <div class="category-card">
 
-<i class="bi bi-bag"></i>
+                        <i class="bi bi-bag"></i>
 
-<h5>
+                        <h5>
 
-Fashion
+                            Fashion
 
-</h5>
+                        </h5>
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-</section>
+    </section>
 
-<!-- ==========================
+    <!-- ==========================
      PRODUCT COMPARISON
 =========================== -->
 
-<section id="comparison" class="comparison py-5">
+    <section id="comparison" class="comparison py-5">
 
-<div class="container">
+        <div class="container">
 
-<div class="section-title text-center mb-5">
-<h2>Price Comparison</h2>
-<div class="update-badge">
-    <i class="bi bi-clock-history"></i>
-    Updated Today
-</div>
-<p>Compare prices from India's top online stores.</p>
-</div>
+            <div class="section-title text-center mb-5">
+                <h2>Price Comparison</h2>
+                <div class="update-badge">
+                    <i class="bi bi-clock-history"></i>
+                    Updated Today
+                </div>
+                <p>Compare prices from India's top online stores.</p>
+            </div>
 
-<div class="comparison-card">
+            <div class="comparison-card">
 
-<div class="row align-items-center">
+                <div class="row align-items-center">
 
-    <div class="col-lg-3 d-flex justify-content-center align-items-center comparison-image">
+                    <div class="col-lg-3 d-flex justify-content-center align-items-center comparison-image">
 
-        <img
-            id="productImage"
-            src="assets/images/iphone15.png"
-            class="img-fluid product-img">
+                        <img id="productImage" src="assets/images/iphone15.png" class="img-fluid product-img">
 
-    </div>
+                    </div>
 
-    <div class="col-lg-9">
+                    <div class="col-lg-9">
 
-<div class="title-row">
+                        <div class="title-row">
 
-<h3 id="productTitle">
-Apple iPhone 15 (128GB)
-</h3>
+                            <h3 id="productTitle">
+                                Apple iPhone 15 (128GB)
+                            </h3>
 
-</div>
+                        </div>
 
-<p class="text-muted" id="productDesc">
-Latest Apple smartphone with A16 Bionic Chip.
-</p>
+                        <p class="text-muted" id="productDesc">
+                            Latest Apple smartphone with A16 Bionic Chip.
+                        </p>
 
-<div class="table-responsive">
+                        <div class="table-responsive">
 
-<table class="table table-hover align-middle">
+                            <table class="table table-hover align-middle">
 
-<thead>
+                                <thead>
 
-<tr>
+                                    <tr>
 
-<th>Store</th>
+                                        <th>Store</th>
 
-<th>Price</th>
+                                        <th>Price</th>
 
-<th>Discount</th>
+                                        <th>Discount</th>
 
-<th>Rating</th>
+                                        <th>Rating</th>
 
-<th>Delivery</th>
+                                        <th>Delivery</th>
 
-<th></th>
+                                        <th></th>
 
-</tr>
+                                    </tr>
 
-</thead>
+                                </thead>
 
-<tbody>
+                                <tbody>
 
-<tr class="best-deal">
+                                    <tr class="best-deal">
 
-<td>
-    <i class="bi bi-amazon store-icon amazon"></i>
-    Amazon
-</td>
+                                        <td>
+                                            <i class="bi bi-amazon store-icon amazon"></i>
+                                            Amazon
+                                        </td>
 
-<td id="amazonPrice">₹69,999</td>
+                                        <td id="amazonPrice">₹69,999</td>
 
-<td>15%</td>
+                                        <td>15%</td>
 
-<td>⭐ 4.8</td>
+                                        <td>⭐ 4.8</td>
 
-<td>Tomorrow</td>
+                                        <td>Tomorrow</td>
 
-<td>
-<button id="amazonBtn" class="btn btn-success">
-    Buy Now
-</button>
-</td>
+                                        <td>
+                                            <button id="amazonBtn" class="btn btn-success">
+                                                Buy Now
+                                            </button>
+                                        </td>
 
-</tr>
+                                    </tr>
 
-<tr>
+                                    <tr>
 
-<td>
-    <i class="bi bi-cart-fill store-icon flipkart"></i>
-    Flipkart
-</td>
+                                        <td>
+                                            <i class="bi bi-cart-fill store-icon flipkart"></i>
+                                            Flipkart
+                                        </td>
 
-<td id="flipkartPrice">₹70,499</td>
+                                        <td id="flipkartPrice">₹70,499</td>
 
-<td>13%</td>
+                                        <td>13%</td>
 
-<td>⭐ 4.7</td>
+                                        <td>⭐ 4.7</td>
 
-<td>2 Days</td>
+                                        <td>2 Days</td>
 
-<td>
+                                        <td>
 
-<button id="flipkartBtn" class="btn btn-primary">
-    Buy Now
-</button>
+                                            <button id="flipkartBtn" class="btn btn-primary">
+                                                Buy Now
+                                            </button>
 
-</td>
-</tr>
+                                        </td>
+                                    </tr>
 
-<tr>
+                                    <tr>
 
-<td>
-    <i class="bi bi-phone-fill store-icon croma"></i>
-    Croma
-</td>
+                                        <td>
+                                            <i class="bi bi-phone-fill store-icon croma"></i>
+                                            Croma
+                                        </td>
 
-<td id="cromaPrice">₹71,200</td>
+                                        <td id="cromaPrice">₹71,200</td>
 
-<td>10%</td>
+                                        <td>10%</td>
 
-<td>⭐ 4.6</td>
+                                        <td>⭐ 4.6</td>
 
-<td>3 Days</td>
+                                        <td>3 Days</td>
 
-<td>
+                                        <td>
 
-<button id="cromaBtn" class="btn btn-primary">
-    Buy Now
-</button>
+                                            <button id="cromaBtn" class="btn btn-primary">
+                                                Buy Now
+                                            </button>
 
-</td>
-</tr>
+                                        </td>
+                                    </tr>
 
-<tr>
+                                    <tr>
 
-<td>
-    <i class="bi bi-shop store-icon reliance"></i>
-    Reliance Digital
-</td>
+                                        <td>
+                                            <i class="bi bi-shop store-icon reliance"></i>
+                                            Reliance Digital
+                                        </td>
 
-<td id="reliancePrice">₹71,499</td>
+                                        <td id="reliancePrice">₹71,499</td>
 
-<td>9%</td>
+                                        <td>9%</td>
 
-<td>⭐ 4.6</td>
+                                        <td>⭐ 4.6</td>
 
-<td>2 Days</td>
+                                        <td>2 Days</td>
 
-<td>
+                                        <td>
 
-<button id="relianceBtn" class="btn btn-primary">
-    Buy Now
-</button>
+                                            <button id="relianceBtn" class="btn btn-primary">
+                                                Buy Now
+                                            </button>
 
-</td>
-</tr>
+                                        </td>
+                                    </tr>
 
-</tbody>
-</table>
+                                </tbody>
+                            </table>
 
-</div>
+                        </div>
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-</section>
+    </section>
 
-<!-- ==========================
+    <!-- ==========================
 FEATURES
 =========================== -->
 
-<section id="features" class="features py-5">
+    <section id="features" class="features py-5">
 
-<div class="container">
+        <div class="container">
 
-<div class="section-title text-center mb-5">
+            <div class="section-title text-center mb-5">
 
-<h2>
+                <h2>
 
-Why Choose Us
+                    Why Choose Us
 
-</h2>
+                </h2>
 
-<p>
+                <p>
 
-We help users save money with smart comparison.
+                    We help users save money with smart comparison.
 
-</p>
+                </p>
 
-</div>
+            </div>
 
-<div class="row g-4">
+            <div class="row g-4">
 
-<div class="col-lg-3 col-md-6 mb-4">
-<div class="feature-box">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="feature-box">
 
-<i class="bi bi-search"></i>
+                        <i class="bi bi-search"></i>
 
-<h4>
+                        <h4>
 
-Fast Search
+                            Fast Search
 
-</h4>
+                        </h4>
 
-<p>
+                        <p>
 
-Search products instantly.
+                            Search products instantly.
 
-</p>
+                        </p>
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
-<div class="col-lg-3 col-md-6 mb-4">
+                <div class="col-lg-3 col-md-6 mb-4">
 
-<div class="feature-box">
+                    <div class="feature-box">
 
-<i class="bi bi-currency-rupee"></i>
+                        <i class="bi bi-currency-rupee"></i>
 
-<h4>
+                        <h4>
 
-Best Price
+                            Best Price
 
-</h4>
+                        </h4>
 
-<p>
+                        <p>
 
-Find lowest available price.
+                            Find lowest available price.
 
-</p>
+                        </p>
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
-<div class="col-lg-3 col-md-6 mb-4">
+                <div class="col-lg-3 col-md-6 mb-4">
 
-<div class="feature-box">
+                    <div class="feature-box">
 
-<i class="bi bi-shield-check"></i>
+                        <i class="bi bi-shield-check"></i>
 
-<h4>
+                        <h4>
 
-Trusted Stores
+                            Trusted Stores
 
-</h4>
+                        </h4>
 
-<p>
+                        <p>
 
-Only verified shopping websites.
+                            Only verified shopping websites.
 
-</p>
+                        </p>
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
-<div class="col-lg-3 col-md-6 mb-4">
+                <div class="col-lg-3 col-md-6 mb-4">
 
-<div class="feature-box">
+                    <div class="feature-box">
 
-<i class="bi bi-lightning-charge"></i>
+                        <i class="bi bi-lightning-charge"></i>
 
-<h4>
+                        <h4>
 
-Quick Compare
+                            Quick Compare
 
-</h4>
+                        </h4>
 
-<p>
+                        <p>
 
-Compare within seconds.
+                            Compare within seconds.
 
-</p>
+                        </p>
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-</section>
+    </section>
 
-<!-- ==========================
+    <!-- ==========================
      TRENDING PRODUCTS
 =========================== -->
 
-<section class="trending py-5">
+    <section class="trending py-5">
 
-<div class="container">
+        <div class="container">
 
-<div class="section-title">
+            <div class="section-title">
 
-<h2>Trending Deals</h2>
+                <h2>Trending Deals</h2>
 
-<p>Most searched products today</p>
+                <p>Most searched products today</p>
 
-</div>
+            </div>
 
-<div class="row g-4">
+            <div class="row g-4">
 
-<div class="col-lg-4">
+                <div class="col-lg-4">
 
-<div class="product-card">
+                    <div class="product-card">
 
-<img src="assets/images/iphone15.png" alt="Apple iPhone 15">
+                        <img src="assets/images/iphone15.png" alt="Apple iPhone 15">
 
-<h4>Apple iPhone 15</h4>
+                        <h4>Apple iPhone 15</h4>
 
-<p>Starting from</p>
+                        <p>Starting from</p>
 
-<h3>₹69,999</h3>
+                        <h3>₹69,999</h3>
 
-<button id="iphoneBtn" class="btn btn-primary w-100"> 
+                        <button id="iphoneBtn" class="btn btn-primary w-100">
 
-Compare Now
+                            Compare Now
 
-</button>
+                        </button>
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
-<div class="col-lg-4">
+                <div class="col-lg-4">
 
-<div class="product-card">
+                    <div class="product-card">
 
-<img src="assets/images/s24.png" alt="Samsung Galaxy S24">
+                        <img src="assets/images/s24.png" alt="Samsung Galaxy S24">
 
-<h4>Samsung S24</h4>
+                        <h4>Samsung S24</h4>
 
-<p>Starting from</p>
+                        <p>Starting from</p>
 
-<h3>₹61,999</h3>
+                        <h3>₹61,999</h3>
 
-<button id="s24Btn" class="btn btn-primary w-100"> 
+                        <button id="s24Btn" class="btn btn-primary w-100">
 
-Compare Now
+                            Compare Now
 
-</button>
+                        </button>
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
-<div class="col-lg-4">
+                <div class="col-lg-4">
 
-<div class="product-card">
+                    <div class="product-card">
 
-<img src="assets/images/macbook.png" alt="MacBook Air M3">
+                        <img src="assets/images/macbook.png" alt="MacBook Air M3">
 
-<h4>MacBook Air M3</h4>
+                        <h4>MacBook Air M3</h4>
 
-<p>Starting from</p>
+                        <p>Starting from</p>
 
-<h3>₹1,09,900</h3>
+                        <h3>₹1,09,900</h3>
 
-<button id="macbookBtn" class="btn btn-primary w-100"> 
+                        <button id="macbookBtn" class="btn btn-primary w-100">
 
-Compare Now
+                            Compare Now
 
-</button>
+                        </button>
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-</section>
+    </section>
 
-<!-- ==========================
+    <!-- ==========================
 FOOTER
 =========================== -->
 
-<footer id="contact">
+    <footer id="contact">
 
-<div class="container">
+        <div class="container">
 
-<div class="row">
+            <div class="row">
 
-<div class="col-lg-6">
+                <div class="col-lg-6">
 
-<h3>
+                    <h3>
 
-PriceCompare
+                        PriceCompare
 
-</h3>
+                    </h3>
 
-<p>
+                    <p>
 
-Compare prices from multiple online stores and save your money.
+                        Compare prices from multiple online stores and save your money.
 
-</p>
+                    </p>
 
-</div>
+                </div>
 
-<div class="col-lg-3 col-md-6 mb-4">
+                <div class="col-lg-3 col-md-6 mb-4">
 
-<h5>
+                    <h5>
 
-Quick Links
+                        Quick Links
 
-</h5>
+                    </h5>
 
-<ul class="list-unstyled">
+                    <ul class="list-unstyled">
 
-<li>Home</li>
+                        <li>Home</li>
 
-<li>Categories</li>
+                        <li>Categories</li>
 
-<li>Compare</li>
+                        <li>Compare</li>
 
-<li>Contact</li>
+                        <li>Contact</li>
 
-</ul>
+                    </ul>
 
-</div>
+                </div>
 
-<div class="col-lg-3 col-md-6 mb-4">
+                <div class="col-lg-3 col-md-6 mb-4">
 
-<h5>
+                    <h5>
 
-Contact
+                        Contact
 
-</h5>
+                    </h5>
 
-<p>
+                    <p>
 
-support@pricecompare.com
+                        support@pricecompare.com
 
-</p>
+                    </p>
 
-<p>
+                    <p>
 
-+91 9876543210
+                        +91 9876543210
 
-</p>
+                    </p>
 
-</div>
+                </div>
 
-</div>
-</div>
+            </div>
+        </div>
 
-<hr class="footer-divider">
-<hr class="footer-divider">
+        <hr class="footer-divider">
+        <hr class="footer-divider">
 
-</div>
-<div class="footer-bottom">
+        </div>
+        <div class="footer-bottom">
 
-    <p>© 2026 PriceCompare • Made with ❤️ by <strong>Pooja</strong></p>
+            <p>© 2026 PriceCompare • Made with ❤️ by <strong>Pooja</strong></p>
 
-    <div class="footer-icons">
+            <div class="footer-icons">
 
-<a href="https://github.com/s1n455pk" target="_blank">
-<i class="fa-brands fa-github"></i>
-</a>
+                <a href="https://github.com/s1n455pk" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                </a>
 
-<a href="#" target="_blank">
-<i class="fa-brands fa-linkedin"></i>
-</a>
+                <a href="#" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
 
-<a href="#" target="_blank">
-<i class="fa-brands fa-instagram"></i>
-</a>
+                <a href="#" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-</footer>
+    </footer>
 
-<!-- Scroll To Top -->
+    <!-- Scroll To Top -->
 
-<button id="topBtn">
-    <i class="bi bi-arrow-up"></i>
-</button>
+    <button id="topBtn">
+        <i class="bi bi-arrow-up"></i>
+    </button>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<script src="products.js"></script>
-<script src="script.js"></script>
+    <script src="products.js"></script>
+    <script src="script.js"></script>
 
-<!-- Toast Notification -->
+    <!-- Toast Notification -->
 
-<div id="toast"></div>
+    <div id="toast"></div>
 
 </body>
-</html>
 
+</html>
